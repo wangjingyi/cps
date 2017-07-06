@@ -1,7 +1,6 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-advanced-reader.ss" "lang")((modname cps) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #t #t none #f () #f)))
+
 ;few examples for CPS style programming in Dr Racket
+
 
 (define (e-length lst cc)
   (cond [(empty? lst) (cc 0)]
