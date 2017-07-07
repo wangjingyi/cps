@@ -1,4 +1,3 @@
-
 ;few examples for CPS style programming in Dr Racket
 
 
@@ -106,6 +105,29 @@
                            
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; main() { Console.WriteLone(F(1) + 1); }
+;
+; int F(int n) { return G(n + 1) + 1; }
+;
+; int G(int n) { return n + 1; }
+;
+; the above program will be translated as the following
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define (G n cc)
+  (cc (add1 n)))
+
+(define (F n cc)
+  (G (add1 n)
+     (lambda (x)
+       (cc (add1 x)))))
+
+(define (main)
+  (F 1 (lambda (x)
+         (print (add1 x)))))
+
+(main)
 
 
 
