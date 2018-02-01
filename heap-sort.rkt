@@ -60,16 +60,3 @@
     (iter max-heap last-idx)))
 
 (heap-sort (list 5 1 66 80 30 100 120 111))
-
-
-                      
-                 
-        
-
-               
-          
-                              
-  
-
-
-              

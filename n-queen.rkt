@@ -1,6 +1,3 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-advanced-reader.ss" "lang")((modname n-queen) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (require racket/list)
 
 (define (make-board n)
@@ -37,8 +34,6 @@
                     0)
            results)))
 
-(define pos (queen 8))
-
 (define (convert l)
   (local [(define n (length l))]
     (map (λ (pos)
@@ -47,4 +42,5 @@
                    (make-list (- n pos 1) 0)))
          l)))
 
-(map convert pos)
+(let ([pos (queen 4)])
+  (map convert pos))
